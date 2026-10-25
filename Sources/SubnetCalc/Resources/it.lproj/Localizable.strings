@@ -1,0 +1,118 @@
+/* Navigazione */
+"IPv4" = "IPv4";
+"IPv6" = "IPv6";
+"Subnetting" = "Subnetting";
+"Supernetting" = "Supernetting";
+"Tools" = "Strumenti";
+"History" = "Cronologia";
+"Help" = "Guida";
+
+/* Etichette */
+"Network Address" = "Indirizzo di rete";
+"Broadcast Address" = "Indirizzo di broadcast";
+"Subnet Mask" = "Maschera di sottorete";
+"Wildcard Mask" = "Maschera Wildcard";
+"First Usable Host" = "Primo host utilizzabile";
+"Last Usable Host" = "Ultimo host utilizzabile";
+"Total Addresses" = "Indirizzi totali";
+"Usable Hosts" = "Host utilizzabili";
+"Address Class" = "Classe di indirizzo";
+"Address Type" = "Tipo di indirizzo";
+"Network Prefix" = "Prefisso di rete";
+"First Address" = "Primo indirizzo";
+"Last Address" = "Ultimo indirizzo";
+"Binary Representation" = "Rappresentazione binaria";
+"Network Bits" = "Bit di rete";
+"Host Bits" = "Bit di host";
+"Prefix Length" = "Lunghezza del prefisso";
+"Expanded Form" = "Forma espansa";
+"Compressed Form" = "Forma compressa";
+"Results" = "Risultati";
+"Supernet" = "Supernet";
+"Aggregated Route" = "Rete aggregata";
+"Aggregated Network" = "Rete aggregata";
+"VLSM Requirements" = "Requisiti VLSM";
+"Mode" = "Modalità";
+"Equal Division" = "Divisione equa";
+"VLSM" = "VLSM";
+"Network" = "Rete";
+"Range" = "Intervallo";
+"Broadcast" = "Broadcast";
+"Available Hosts" = "Host disponibili";
+"Name" = "Nome";
+"Hosts" = "Host";
+"Requested" = "Richiesti";
+
+/* Pulsanti */
+"Calculate" = "Calcola";
+"Clear" = "Pulisci";
+"Copy" = "Copia";
+"Export" = "Esporta";
+"Add" = "Aggiungi";
+"Remove" = "Rimuovi";
+"Add Requirement" = "Aggiungi requisito";
+"Add Network" = "Aggiungi rete";
+"Save as CSV..." = "Salva come CSV...";
+"Copy as Text" = "Copia come testo";
+"Copy as CSV" = "Copia come CSV";
+"Check" = "Verifica";
+"Convert" = "Converti";
+
+/* Placeholder e Suggerimenti */
+"e.g., 192.168.1.10/24" = "es. 192.168.1.10/24";
+"e.g., 2001:db8::1/48" = "es. 2001:db8::1/48";
+"e.g., 192.168.0.0/24" = "es. 192.168.0.0/24";
+"Number of subnets" = "Numero di sottoreti";
+"Host count" = "Numero di host";
+"Subnet name" = "Nome sottorete";
+"Network (e.g. 192.168.0.0/24)" = "Rete (es. 192.168.0.0/24)";
+"Enter at least two networks to calculate the summary route." = "Inserisci almeno due reti per calcolare la rotta aggregata.";
+
+/* Cronologia */
+"No history yet" = "Nessuna cronologia";
+"Clear History" = "Cancella cronologia";
+"Are you sure?" = "Sei sicuro?";
+"This action cannot be undone." = "Questa azione non può essere annullata.";
+"Cancel" = "Annulla";
+"Date" = "Data";
+"Type" = "Tipo";
+"Input" = "Input";
+"Summary" = "Riepilogo";
+
+/* Strumenti */
+"Check if IP is in subnet" = "Controlla se l'IP è nella sottorete";
+"IP Address" = "Indirizzo IP";
+"Subnet (CIDR)" = "Sottorete (CIDR)";
+"Result" = "Risultato";
+"IP belongs to subnet" = "L'IP appartiene alla sottorete";
+"IP does not belong to subnet" = "L'IP non appartiene alla sottorete";
+"CIDR / Mask Converter" = "Convertitore CIDR / Maschera";
+"Enter CIDR prefix, subnet mask, or wildcard mask" = "Inserisci prefisso CIDR, maschera di sottorete o wildcard";
+"CIDR Prefix" = "Prefisso CIDR";
+"CIDR" = "CIDR";
+"DNS & Reverse DNS Lookup" = "Risoluzione DNS & DNS Inverso";
+"Resolve domain names to IP addresses, or IP addresses to reverse hostnames (PTR)." = "Risolvi nomi di dominio in indirizzi IP, o indirizzi IP in hostname inversi (PTR).";
+"Hostname or IP (e.g. apple.com or 8.8.8.8)" = "Hostname o IP (es. apple.com o 8.8.8.8)";
+"Resolve" = "Risolvi";
+"Resolved IP Addresses:" = "Indirizzi IP Risolti:";
+"Reverse Hostnames (PTR):" = "Hostname Inversi (PTR):";
+"IP" = "IP";
+"Hostname" = "Hostname";
+"Ping Sweep / Network Scanner" = "Ping Sweep / Scanner di Rete";
+"Scan an entire subnet (e.g. 192.168.1.0/24) or target host to detect live, reachable devices." = "Scansiona un'intera sottorete (es. 192.168.1.0/24) o un host per rilevare i dispositivi attivi e raggiungibili.";
+"Subnet or IP (e.g. 192.168.1.0/24)" = "Sottorete o IP (es. 192.168.1.0/24)";
+"Start Sweep" = "Avvia Scansione";
+"Stop" = "Interrompi";
+"Scanning hosts..." = "Scansione host in corso...";
+"Copy Live IPs" = "Copia IP Attivi";
+"Timeout" = "Timeout";
+
+/* Risultati e Notifiche */
+"Copied!" = "Copiato!";
+"No results" = "Nessun risultato";
+"Select an item" = "Seleziona un elemento";
+
+/* Errori */
+"Invalid input" = "Input non valido";
+"Enter a valid IPv4 address with CIDR notation" = "Inserisci un indirizzo IPv4 valido con notazione CIDR";
+"Enter a valid IPv6 address with prefix length" = "Inserisci un indirizzo IPv6 valido con lunghezza del prefisso";

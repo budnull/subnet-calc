@@ -1,0 +1,118 @@
+/* Navigation */
+"IPv4" = "IPv4";
+"IPv6" = "IPv6";
+"Subnetting" = "Subnetting";
+"Supernetting" = "Supernetting";
+"Tools" = "Tools";
+"History" = "History";
+"Help" = "Help";
+
+/* Labels */
+"Network Address" = "Network Address";
+"Broadcast Address" = "Broadcast Address";
+"Subnet Mask" = "Subnet Mask";
+"Wildcard Mask" = "Wildcard Mask";
+"First Usable Host" = "First Usable Host";
+"Last Usable Host" = "Last Usable Host";
+"Total Addresses" = "Total Addresses";
+"Usable Hosts" = "Usable Hosts";
+"Address Class" = "Address Class";
+"Address Type" = "Address Type";
+"Network Prefix" = "Network Prefix";
+"First Address" = "First Address";
+"Last Address" = "Last Address";
+"Binary Representation" = "Binary Representation";
+"Network Bits" = "Network Bits";
+"Host Bits" = "Host Bits";
+"Prefix Length" = "Prefix Length";
+"Expanded Form" = "Expanded Form";
+"Compressed Form" = "Compressed Form";
+"Results" = "Results";
+"Supernet" = "Supernet";
+"Aggregated Route" = "Aggregated Route";
+"Aggregated Network" = "Aggregated Network";
+"VLSM Requirements" = "VLSM Requirements";
+"Mode" = "Mode";
+"Equal Division" = "Equal Division";
+"VLSM" = "VLSM";
+"Network" = "Network";
+"Range" = "Range";
+"Broadcast" = "Broadcast";
+"Available Hosts" = "Available Hosts";
+"Name" = "Name";
+"Hosts" = "Hosts";
+"Requested" = "Requested";
+
+/* Buttons */
+"Calculate" = "Calculate";
+"Clear" = "Clear";
+"Copy" = "Copy";
+"Export" = "Export";
+"Add" = "Add";
+"Remove" = "Remove";
+"Add Requirement" = "Add Requirement";
+"Add Network" = "Add Network";
+"Save as CSV..." = "Save as CSV...";
+"Copy as Text" = "Copy as Text";
+"Copy as CSV" = "Copy as CSV";
+"Check" = "Check";
+"Convert" = "Convert";
+
+/* Placeholders & Prompts */
+"e.g., 192.168.1.10/24" = "e.g., 192.168.1.10/24";
+"e.g., 2001:db8::1/48" = "e.g., 2001:db8::1/48";
+"e.g., 192.168.0.0/24" = "e.g., 192.168.0.0/24";
+"Number of subnets" = "Number of subnets";
+"Host count" = "Host count";
+"Subnet name" = "Subnet name";
+"Network (e.g. 192.168.0.0/24)" = "Network (e.g. 192.168.0.0/24)";
+"Enter at least two networks to calculate the summary route." = "Enter at least two networks to calculate the summary route.";
+
+/* History */
+"No history yet" = "No history yet";
+"Clear History" = "Clear History";
+"Are you sure?" = "Are you sure?";
+"This action cannot be undone." = "This action cannot be undone.";
+"Cancel" = "Cancel";
+"Date" = "Date";
+"Type" = "Type";
+"Input" = "Input";
+"Summary" = "Summary";
+
+/* Tools */
+"Check if IP is in subnet" = "Check if IP is in subnet";
+"IP Address" = "IP Address";
+"Subnet (CIDR)" = "Subnet (CIDR)";
+"Result" = "Result";
+"IP belongs to subnet" = "IP belongs to subnet";
+"IP does not belong to subnet" = "IP does not belong to subnet";
+"CIDR / Mask Converter" = "CIDR / Mask Converter";
+"Enter CIDR prefix, subnet mask, or wildcard mask" = "Enter CIDR prefix, subnet mask, or wildcard mask";
+"CIDR Prefix" = "CIDR Prefix";
+"CIDR" = "CIDR";
+"DNS & Reverse DNS Lookup" = "DNS & Reverse DNS Lookup";
+"Resolve domain names to IP addresses, or IP addresses to reverse hostnames (PTR)." = "Resolve domain names to IP addresses, or IP addresses to reverse hostnames (PTR).";
+"Hostname or IP (e.g. apple.com or 8.8.8.8)" = "Hostname or IP (e.g. apple.com or 8.8.8.8)";
+"Resolve" = "Resolve";
+"Resolved IP Addresses:" = "Resolved IP Addresses:";
+"Reverse Hostnames (PTR):" = "Reverse Hostnames (PTR):";
+"IP" = "IP";
+"Hostname" = "Hostname";
+"Ping Sweep / Network Scanner" = "Ping Sweep / Network Scanner";
+"Scan an entire subnet (e.g. 192.168.1.0/24) or target host to detect live, reachable devices." = "Scan an entire subnet (e.g. 192.168.1.0/24) or target host to detect live, reachable devices.";
+"Subnet or IP (e.g. 192.168.1.0/24)" = "Subnet or IP (e.g. 192.168.1.0/24)";
+"Start Sweep" = "Start Sweep";
+"Stop" = "Stop";
+"Scanning hosts..." = "Scanning hosts...";
+"Copy Live IPs" = "Copy Live IPs";
+"Timeout" = "Timeout";
+
+/* Results & Feedback */
+"Copied!" = "Copied!";
+"No results" = "No results";
+"Select an item" = "Select an item";
+
+/* Errors */
+"Invalid input" = "Invalid input";
+"Enter a valid IPv4 address with CIDR notation" = "Enter a valid IPv4 address with CIDR notation";
+"Enter a valid IPv6 address with prefix length" = "Enter a valid IPv6 address with prefix length";

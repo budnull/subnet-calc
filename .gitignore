@@ -1,0 +1,22 @@
+# Swift Package Manager & Build output
+.build/
+.swiftpm/
+Packages/
+xcuserdata/
+
+# App Bundles & Installers (keep source scripts, ignore binaries)
+SubnetCalc.app/
+SubnetCalc.dmg
+dmg_staging/
+AppIcon.iconset/
+
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Temporary files
+*.swp
+*~
