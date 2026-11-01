@@ -34,12 +34,18 @@ final class NetworkDiagnosticServiceTests: XCTestCase {
         }
     }
     
-    func testPing_loopbackReachable() async {
+    func testProbeHost_loopbackReachable() async {
         let service = NetworkDiagnosticService.shared
-        let result = await service.ping(ip: "127.0.0.1")
+        let result = await service.probeHost(ip: "127.0.0.1", timeoutMs: 500)
         
         XCTAssertEqual(result.ip, "127.0.0.1")
         XCTAssertTrue(result.isReachable)
         XCTAssertNotNil(result.responseTimeMs)
+    }
+    
+    func testReverseDNS_loopback() async {
+        let service = NetworkDiagnosticService.shared
+        let host = await service.reverseDNS(ip: "127.0.0.1")
+        XCTAssertNotNil(host)
     }
 }

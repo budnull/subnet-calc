@@ -106,10 +106,11 @@ class ToolsViewModel: ObservableObject {
         let target = pingTarget.trimmingCharacters(in: .whitespaces)
         guard !target.isEmpty else { return }
         
-        var ipsToPing: [String] = []
+        var ipSequence: AnyIterator<String>
+        var totalCount: Int = 0
         
         if target.contains("/") {
-            // Subnet sweep
+            // Subnet sweep: O(1) memory lazy iterator over IPv4 range
             do {
                 let res = try IPv4Calculator.calculate(input: target)
                 guard res.prefixLength >= 23 else {
@@ -117,49 +118,62 @@ class ToolsViewModel: ObservableObject {
                     return
                 }
                 
-                if let first = res.firstUsableHost, let last = res.lastUsableHost {
-                    var current = first.rawValue
-                    let end = last.rawValue
-                    while current <= end {
-                        ipsToPing.append(IPv4Address(rawValue: current).description)
-                        current += 1
-                    }
+                guard let first = res.firstUsableHost, let last = res.lastUsableHost else {
+                    pingError = "No usable hosts in target subnet."
+                    return
+                }
+                
+                let startRaw = first.rawValue
+                let endRaw = last.rawValue
+                totalCount = Int(endRaw - startRaw + 1)
+                
+                var current = startRaw
+                ipSequence = AnyIterator {
+                    guard current <= endRaw else { return nil }
+                    let ipStr = IPv4Address(rawValue: current).description
+                    current += 1
+                    return ipStr
                 }
             } catch {
                 pingError = error.localizedDescription
                 return
             }
         } else {
-            // Single IP or Hostname
-            ipsToPing = [target]
+            // Single target
+            totalCount = 1
+            var yielded = false
+            ipSequence = AnyIterator {
+                if !yielded {
+                    yielded = true
+                    return target
+                }
+                return nil
+            }
         }
         
-        guard !ipsToPing.isEmpty else {
+        guard totalCount > 0 else {
             pingError = "No IP addresses to ping."
             return
         }
         
         isScanning = true
-        let totalCount = ipsToPing.count
         
         scanTask = Task { @MainActor in
             var completed = 0
+            let maxConcurrent = 20
             
-            // Sweep with controlled concurrency
+            // Sweep with controlled concurrency without pre-allocating IP arrays
             await withTaskGroup(of: PingHostResult.self) { group in
-                var iterator = ipsToPing.makeIterator()
-                let maxConcurrent = 15
-                
-                // Seed initial batch
+                // Seed initial batch of workers
                 for _ in 0..<maxConcurrent {
-                    if let ip = iterator.next() {
+                    if let ip = ipSequence.next() {
                         group.addTask {
-                            await self.diagService.ping(ip: ip)
+                            await self.diagService.probeHost(ip: ip, timeoutMs: 300)
                         }
                     }
                 }
                 
-                // Process results and feed remaining
+                // Process completed and stream next tasks
                 for await result in group {
                     if Task.isCancelled { break }
                     
@@ -167,9 +181,21 @@ class ToolsViewModel: ObservableObject {
                     completed += 1
                     self.scanProgress = Double(completed) / Double(totalCount)
                     
-                    if let nextIP = iterator.next() {
+                    // Lazy background reverse DNS lookup only for reachable hosts
+                    if result.isReachable {
+                        let ip = result.ip
+                        Task { @MainActor in
+                            if let hostname = await self.diagService.reverseDNS(ip: ip) {
+                                if let idx = self.pingResults.firstIndex(where: { $0.ip == ip }) {
+                                    self.pingResults[idx].hostname = hostname
+                                }
+                            }
+                        }
+                    }
+                    
+                    if let nextIP = ipSequence.next() {
                         group.addTask {
-                            await self.diagService.ping(ip: nextIP)
+                            await self.diagService.probeHost(ip: nextIP, timeoutMs: 300)
                         }
                     }
                 }
